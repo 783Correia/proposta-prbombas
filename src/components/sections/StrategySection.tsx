@@ -59,7 +59,7 @@ const StrategySection = () => {
             <span className="neon-text">Pronto para trabalhar por você.</span>
           </h2>
           <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-muted-foreground mb-16">
-            Tudo que a PR Bombas precisa para ter uma presença digital sólida, profissional e funcional — entregue em 7 dias.
+            Construído com a tecnologia que o Google favorece no ranqueamento e que o ChatGPT referencia nas respostas — sem que o cliente precise saber qual é. O resultado é o que importa.
           </p>
         </div>
 
@@ -96,7 +96,7 @@ const StrategySection = () => {
                 CTAs claros. Formulário de orçamento. Contato direto.
               </h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                O objetivo do site não é ser bonito — é gerar contato. Cada página vai ter um caminho claro para o visitante pedir orçamento, ligar ou mandar mensagem. Simples. Direto. Eficiente.
+                O objetivo do site não é ser bonito — é gerar contato. Construído com tecnologia moderna que carrega em menos de 1 segundo, é lido pelo Google como prioridade e já aparece como referência nas respostas do ChatGPT para quem busca fornecedores de bombas submersas.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">

@@ -1,31 +1,35 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { BarChart2, Key, Compass } from "lucide-react";
+import { BarChart2, Key, Compass, Check } from "lucide-react";
 
 const bonuses = [
   {
     icon: BarChart2,
-    tag: "Bônus 01",
-    title: "Auditoria Digital + Estratégia na Minha Visão",
+    tag: "Bônus 01 — Já feito",
+    title: "Auditoria Digital Completa",
     description:
-      "Um diagnóstico completo da presença digital atual da PR Bombas: o que está funcionando, o que está prejudicando, e qual seria o caminho ideal para crescer online. Entregue em documento estratégico com recomendações priorizadas.",
+      "Auditei o prbombas.com.br antes de mandar essa proposta. O relatório já está pronto e será entregue no dia 1 — sem espera. Inclui cada problema identificado, a causa raiz e a correção exata a aplicar.",
     items: [
-      "Análise do site atual",
-      "Benchmark de concorrentes",
-      "Oportunidades identificadas",
-      "Roadmap de prioridades",
+      "Score mobile: 59/100 → meta: 85+",
+      "LCP atual 30,9s → meta < 2,5s",
+      "H1 ausente em todas as 12 páginas",
+      "3 bugs de UX documentados com correção",
+      "Title tags e meta descriptions reescritas por página",
+      "Open Graph e Schema Markup mapeados",
     ],
   },
   {
     icon: Key,
-    tag: "Bônus 02",
-    title: "Mapa de Palavras-Chave + Campanhas",
+    tag: "Bônus 02 — Já feito",
+    title: "Mapa de Palavras-Chave + Pauta do Blog",
     description:
-      "Levantamento das principais palavras-chave que o público da PR Bombas está buscando no Google — bombas centrífugas, manutenção hidráulica, equipamentos industriais e muito mais. Serve como base para SEO e futuras campanhas.",
+      "Pesquisei as buscas reais do público da PR Bombas. Palavras com intenção de compra, termos técnicos do segmento e oportunidades de conteúdo que nenhum concorrente está explorando direito.",
     items: [
-      "Palavras-chave de intenção de compra",
-      "Termos técnicos do segmento",
-      "Volume de busca mensal",
-      "Sugestão de conteúdos a criar",
+      "bomba submersa para poço artesiano",
+      "como instalar bomba submersa",
+      "bomba submersa para irrigação rural",
+      "PR 500 vs PR 650 — qual comprar?",
+      "bomba vibratória vs centrífuga submersa",
+      "7 artigos com slug, título e palavra-chave principal prontos",
     ],
   },
   {
@@ -33,12 +37,12 @@ const bonuses = [
     tag: "Bônus 03",
     title: "Norte Digital — 2 Aulas Ao Vivo",
     description:
-      "Duas aulas ao vivo com a equipe da PR Bombas, nas datas escolhidas pela empresa. Conteúdo sob medida: como usar IA para ganhar eficiência, quais ferramentas fazem sentido para o seu porte, e como construir uma presença digital escalável no médio prazo.",
+      "Duas aulas ao vivo com a equipe da PR Bombas, nas datas escolhidas pela empresa. Conteúdo sob medida: como usar IA para ganhar eficiência, quais ferramentas fazem sentido para o porte da empresa, e como construir presença digital escalável.",
     items: [
       "2 encontros ao vivo — datas à escolha da empresa",
       "Ferramentas de IA aplicadas ao negócio",
-      "Como usar ChatGPT, Notion AI e similares",
-      "Estratégia de conteúdo com menos esforço",
+      "Como produzir conteúdo com menos esforço",
+      "Visão de médio prazo para o digital da PR Bombas",
     ],
   },
 ];
@@ -55,13 +59,12 @@ const DifferentiatorsSection = () => {
             Bônus Exclusivos
           </p>
           <h2 className="heading-display text-center text-3xl font-bold sm:text-4xl md:text-5xl text-foreground mb-4">
-            Além do site,{" "}
-            <span style={{ color: "hsl(36 95% 50%)" }}>três entregas</span>
+            Dois já estão prontos.{" "}
             <br />
-            que vão além da concorrência.
+            <span style={{ color: "hsl(36 95% 50%)" }}>Você recebe no dia 1.</span>
           </h2>
           <p className="mx-auto max-w-xl text-center text-muted-foreground mb-16 text-balance">
-            Esses bônus não são padding — são o que diferencia um site novo de uma estratégia digital de verdade.
+            Antes de enviar essa proposta, já fiz a auditoria e o mapa de palavras-chave. O trabalho não começa quando você assina — já começou.
           </p>
         </div>
 
@@ -83,6 +86,7 @@ interface BonusCardProps {
 const BonusCard = ({ bonus, index }: BonusCardProps) => {
   const { ref, isVisible } = useScrollAnimation(0.1);
   const Icon = bonus.icon;
+  const isReady = bonus.tag.includes("Já feito");
 
   return (
     <div
@@ -90,18 +94,26 @@ const BonusCard = ({ bonus, index }: BonusCardProps) => {
       className={`fade-up glass-card p-8 flex flex-col ${isVisible ? "visible" : ""}`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      <div
-        className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg"
-        style={{ background: "hsl(36 95% 50% / 0.1)", color: "hsl(36 95% 50%)" }}
-      >
-        <Icon className="h-6 w-6" />
+      <div className="flex items-start justify-between mb-4">
+        <div
+          className="inline-flex h-12 w-12 items-center justify-center rounded-lg"
+          style={{ background: "hsl(36 95% 50% / 0.1)", color: "hsl(36 95% 50%)" }}
+        >
+          <Icon className="h-6 w-6" />
+        </div>
+        {isReady && (
+          <span className="flex items-center gap-1 text-xs font-bold px-2.5 py-1 rounded-full bg-green-50 text-green-700 border border-green-200">
+            <Check className="h-3 w-3" />
+            Já feito
+          </span>
+        )}
       </div>
 
       <span
-        className="text-xs font-bold tracking-[0.25em] uppercase mb-2"
+        className="text-xs font-bold tracking-[0.2em] uppercase mb-2"
         style={{ color: "hsl(36 95% 50%)" }}
       >
-        {bonus.tag}
+        {bonus.tag.replace(" — Já feito", "")}
       </span>
 
       <h3 className="heading-display text-lg font-bold text-foreground mb-3 leading-tight">
@@ -114,9 +126,9 @@ const BonusCard = ({ bonus, index }: BonusCardProps) => {
 
       <ul className="space-y-2">
         {bonus.items.map((item) => (
-          <li key={item} className="flex items-center gap-2 text-xs text-muted-foreground">
+          <li key={item} className="flex items-start gap-2 text-xs text-muted-foreground">
             <span
-              className="w-1.5 h-1.5 rounded-full shrink-0"
+              className="w-1.5 h-1.5 rounded-full shrink-0 mt-1"
               style={{ background: "hsl(36 95% 50%)" }}
             />
             {item}

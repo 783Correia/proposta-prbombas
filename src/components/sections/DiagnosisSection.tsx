@@ -1,30 +1,34 @@
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Smartphone, Search, MousePointerClick, AlertTriangle } from "lucide-react";
+import { Smartphone, Search, MousePointerClick, Zap } from "lucide-react";
 
 const cards = [
   {
-    icon: Smartphone,
-    title: "O site não funciona bem no celular.",
+    icon: Zap,
+    title: "Performance crítica no celular.",
+    badge: "Score 59/100",
     description:
-      "Mais de 70% das buscas industriais hoje acontecem pelo smartphone. Um site que quebra no mobile afasta clientes antes mesmo de eles lerem o que a empresa oferece. Primeira impressão ruim = lead perdido.",
+      "O site atual leva 30,9 segundos para carregar o conteúdo principal no mobile. A meta do Google é 2,5s. Isso significa que a maioria dos visitantes abandona antes de ver qualquer produto — e o algoritmo penaliza o posicionamento.",
   },
   {
     icon: Search,
-    title: "Invisível no Google.",
+    title: "Estrutura que prejudica o Google.",
+    badge: "H1 ausente em todas as páginas",
     description:
-      "Sem estrutura de SEO, a PR Bombas não aparece quando alguém busca 'bomba centrífuga Paraná' ou 'bomba de água industrial'. Concorrentes menores aparecem primeiro. O cliente vai para quem aparece.",
+      "Nenhuma página do site tem H1 — o elemento mais importante para o Google entender do que se trata cada página. Todas usam H2 no lugar. Isso, combinado com title tags sem localização, deixa a PR Bombas invisível para quem busca 'bomba submersa Pouso Redondo' ou 'bomba submersa SC'.",
   },
   {
     icon: MousePointerClick,
-    title: "Nenhum caminho claro para conversão.",
+    title: "Bugs que afastam clientes.",
+    badge: "3 erros identificados",
     description:
-      "O visitante chega ao site, não encontra um CTA direto, não sabe como pedir orçamento, e vai embora. Um site sem estrutura de conversão é vitrine sem vendedor — bonito talvez, mas não vende.",
+      "Contadores zerados nas páginas de produto (+0 clientes satisfeitos), carrossel que triplica as imagens no HTML causando lentidão, e número de telefone diferente no site, no rodapé e no Google Meu Negócio. Cada detalhe assim passa insegurança para quem está avaliando comprar.",
   },
   {
-    icon: AlertTriangle,
-    title: "Visual defasado passa insegurança.",
+    icon: Smartphone,
+    title: "Invisível onde o cliente pesquisa.",
+    badge: "OG tags ausentes",
     description:
-      "Design antigo comunica empresa parada no tempo. No segmento industrial, credibilidade é tudo. Um site que parece dos anos 2010 levanta dúvidas sobre a qualidade do produto — mesmo que o produto seja excelente.",
+      "O site não tem Open Graph configurado — quando alguém compartilha um link da PR Bombas no WhatsApp ou no Instagram, não aparece imagem nem descrição. Além disso, sem estrutura técnica adequada, o site não é referenciado em pesquisas no ChatGPT, que hoje já indica fornecedores para compradores B2B.",
   },
 ];
 
@@ -39,10 +43,12 @@ const DiagnosisSection = () => {
             O Diagnóstico
           </p>
           <h2 className="heading-display text-center text-3xl font-bold sm:text-4xl md:text-5xl text-foreground mb-4">
-            O site atual está custando clientes.
+            Já auditei o site atual.
+            <br />
+            <span className="neon-text">Os problemas são concretos.</span>
           </h2>
           <p className="mx-auto max-w-xl text-center text-muted-foreground mb-16 text-balance">
-            Não é julgamento — é o que os dados mostram. Cada ponto abaixo é uma oportunidade perdida hoje que o novo site vai resolver.
+            Antes de montar essa proposta, analisei o prbombas.com.br com ferramentas reais. Isso é o que encontrei.
           </p>
         </div>
 
@@ -50,6 +56,22 @@ const DiagnosisSection = () => {
           {cards.map((card, i) => (
             <DiagnosisCard key={card.title} card={card} index={i} />
           ))}
+        </div>
+
+        <div className={`fade-up mt-8 rounded-2xl border border-destructive/20 bg-destructive/[0.03] p-6 ${isVisible ? "visible" : ""}`}>
+          <div className="grid gap-6 sm:grid-cols-4 text-center">
+            {[
+              { value: "59/100", label: "Performance mobile", color: "text-red-500" },
+              { value: "30,9s", label: "LCP atual (meta: 2,5s)", color: "text-red-500" },
+              { value: "0 / 12", label: "Páginas com H1", color: "text-red-500" },
+              { value: "3", label: "Bugs de UX ativos", color: "text-amber-500" },
+            ].map((stat) => (
+              <div key={stat.label}>
+                <p className={`heading-display text-3xl font-bold ${stat.color}`}>{stat.value}</p>
+                <p className="text-xs text-muted-foreground mt-1">{stat.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -71,8 +93,13 @@ const DiagnosisCard = ({ card, index }: DiagnosisCardProps) => {
       className={`fade-up glass-card p-8 transition-all duration-500 ${isVisible ? "visible" : ""}`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
-        <Icon className="h-6 w-6" />
+      <div className="flex items-start justify-between mb-6">
+        <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
+          <Icon className="h-6 w-6" />
+        </div>
+        <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-red-50 text-red-600 border border-red-100">
+          {card.badge}
+        </span>
       </div>
       <h3 className="heading-display text-lg font-bold text-foreground mb-3 leading-tight">
         {card.title}
