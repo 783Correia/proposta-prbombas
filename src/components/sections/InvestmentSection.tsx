@@ -11,9 +11,10 @@ const included = [
   "Performance otimizada (Core Web Vitals)",
   "CMS para edição sem programador",
   "Publicação no domínio + SSL",
+  "Suporte pós-entrega para a estrutura do site — 12 meses",
   "Auditoria digital + estratégia (bônus)",
   "Mapa de palavras-chave + campanhas (bônus)",
-  "Consultoria Norte Digital — IA e estratégia (bônus)",
+  "Norte Digital — 2 aulas ao vivo (bônus)",
 ];
 
 const comparisons = [

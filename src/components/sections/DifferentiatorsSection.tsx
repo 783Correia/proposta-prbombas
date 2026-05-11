@@ -31,14 +31,14 @@ const bonuses = [
   {
     icon: Compass,
     tag: "Bônus 03",
-    title: "Consultoria Norte Digital — IA e Estratégia",
+    title: "Norte Digital — 2 Aulas Ao Vivo",
     description:
-      "Uma sessão de consultoria para alinhar a visão digital da empresa: como usar IA para ganhar eficiência, quais ferramentas fazem sentido para o porte da PR Bombas, e como construir uma presença digital escalável no médio prazo.",
+      "Duas aulas ao vivo com a equipe da PR Bombas, nas datas escolhidas pela empresa. Conteúdo sob medida: como usar IA para ganhar eficiência, quais ferramentas fazem sentido para o seu porte, e como construir uma presença digital escalável no médio prazo.",
     items: [
+      "2 encontros ao vivo — datas à escolha da empresa",
       "Ferramentas de IA aplicadas ao negócio",
       "Como usar ChatGPT, Notion AI e similares",
       "Estratégia de conteúdo com menos esforço",
-      "Visão de longo prazo para o digital",
     ],
   },
 ];
