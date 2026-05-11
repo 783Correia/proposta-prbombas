@@ -5,6 +5,7 @@ import CasesSection from "@/components/sections/CasesSection";
 import StrategySection from "@/components/sections/StrategySection";
 import DifferentiatorsSection from "@/components/sections/DifferentiatorsSection";
 import TimelineSection from "@/components/sections/TimelineSection";
+import AboutSection from "@/components/sections/AboutSection";
 import InvestmentSection from "@/components/sections/InvestmentSection";
 import FooterSection from "@/components/sections/FooterSection";
 import CountdownBar from "@/components/CountdownBar";
@@ -26,6 +27,7 @@ const Index = () => {
       <StrategySection />
       <DifferentiatorsSection />
       <TimelineSection />
+      <AboutSection />
       <InvestmentSection />
       <FooterSection />
     </main>
