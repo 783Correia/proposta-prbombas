@@ -51,7 +51,7 @@ const InvestmentSection = () => {
 
               <div className="mb-6 mt-2">
                 <h3 className="heading-display text-xl font-bold text-foreground">Site PR Bombas</h3>
-                <p className="text-xs text-muted-foreground mt-1">Entrega em até 4 semanas</p>
+                <p className="text-xs text-muted-foreground mt-1">Entrega em 7 dias</p>
               </div>
 
               <div className="mb-6 border-y border-border py-6">

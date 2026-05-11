@@ -2,22 +2,22 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const steps = [
   {
-    week: "Semana 1",
+    week: "Dias 1–2",
     title: "Briefing + Estrutura",
     description: "Reunião de alinhamento, levantamento de conteúdo, definição das páginas e wireframes aprovados.",
   },
   {
-    week: "Semana 2",
+    week: "Dias 2–4",
     title: "Design + Identidade",
     description: "Criação do layout completo com identidade visual da PR Bombas aplicada. Aprovação do design antes de codar.",
   },
   {
-    week: "Semana 3",
+    week: "Dias 4–6",
     title: "Desenvolvimento",
     description: "Construção do site com todas as páginas, formulários, otimização mobile e integração de SEO on-page.",
   },
   {
-    week: "Semana 4",
+    week: "Dia 7",
     title: "Revisão + Entrega",
     description: "Rodada de ajustes, testes em todos os dispositivos, publicação no domínio e handoff do painel de edição.",
   },
@@ -34,10 +34,10 @@ const TimelineSection = () => {
             Cronograma
           </p>
           <h2 className="heading-display text-center text-3xl font-bold sm:text-4xl md:text-5xl text-foreground mb-4">
-            4 semanas. Site no ar.
+            7 dias. Site no ar.
           </h2>
           <p className="mx-auto max-w-xl text-center text-muted-foreground mb-16">
-            Processo claro, sem surpresas. Cada semana tem uma entrega definida e aprovação antes de avançar.
+            Processo claro, sem surpresas. Cada etapa tem uma entrega definida e aprovação antes de avançar.
           </p>
         </div>
 

@@ -59,7 +59,7 @@ const StrategySection = () => {
             <span className="neon-text">Pronto para trabalhar por você.</span>
           </h2>
           <p className="mx-auto max-w-2xl text-center text-lg leading-relaxed text-muted-foreground mb-16">
-            Tudo que a PR Bombas precisa para ter uma presença digital sólida, profissional e funcional — entregue em até 4 semanas.
+            Tudo que a PR Bombas precisa para ter uma presença digital sólida, profissional e funcional — entregue em 7 dias.
           </p>
         </div>
 
@@ -102,7 +102,7 @@ const StrategySection = () => {
             <div className="grid grid-cols-2 gap-4">
               {[
                 { value: "5+", label: "páginas entregues" },
-                { value: "4sem", label: "prazo de entrega" },
+                { value: "7d", label: "prazo de entrega" },
                 { value: "SEO", label: "on-page incluído" },
                 { value: "CMS", label: "painel de edição" },
               ].map((stat) => (
