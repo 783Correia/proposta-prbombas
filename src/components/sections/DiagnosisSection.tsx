@@ -28,7 +28,7 @@ const cards = [
     title: "Invisível onde o cliente pesquisa.",
     badge: "OG tags ausentes",
     description:
-      "O site não tem Open Graph configurado — quando alguém compartilha um link da PR Bombas no WhatsApp ou no Instagram, não aparece imagem nem descrição. Além disso, sem estrutura técnica adequada, o site não é referenciado em pesquisas no ChatGPT, que hoje já indica fornecedores para compradores B2B.",
+      "O site não tem Open Graph configurado — quando alguém compartilha um link no WhatsApp, não aparece imagem nem descrição. E há um ponto crítico: o ChatGPT, o Claude e outros assistentes de IA já indicam fornecedores nas respostas. Sites lentos feitos em plataformas antigas praticamente não aparecem nessas indicações. Você perde o cliente antes de ele chegar ao site.",
   },
 ];
 

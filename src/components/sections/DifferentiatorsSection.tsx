@@ -37,12 +37,13 @@ const bonuses = [
     tag: "Bônus 03",
     title: "Norte Digital — 2 Aulas Ao Vivo",
     description:
-      "Duas aulas ao vivo com a equipe da PR Bombas, nas datas escolhidas pela empresa. Conteúdo sob medida: como usar IA para ganhar eficiência, quais ferramentas fazem sentido para o porte da empresa, e como construir presença digital escalável.",
+      "Duas aulas ao vivo com a equipe da PR Bombas, nas datas escolhidas pela empresa. Conteúdo prático sobre as IAs que realmente fazem diferença no dia a dia — Claude, Manus, ChatGPT e outras — e como cada uma pode ser aplicada no negócio para ganhar tempo e escalar sem contratar.",
     items: [
       "2 encontros ao vivo — datas à escolha da empresa",
-      "Ferramentas de IA aplicadas ao negócio",
-      "Como produzir conteúdo com menos esforço",
-      "Visão de médio prazo para o digital da PR Bombas",
+      "Claude, Manus, ChatGPT e as melhores IAs do mercado",
+      "Como o ChatGPT já indica fornecedores nas buscas (e por que sites modernos aparecem)",
+      "Automações práticas para o time comercial e de suporte",
+      "Como produzir conteúdo, propostas e respostas técnicas com IA",
     ],
   },
 ];
